@@ -178,7 +178,7 @@ All of the images used in a scrolly shortcode should be placed in the `static/sc
 
 ### DatawrapperEmbed
 
-This component lets you embed charts created on [Datawrapper](https://www.datawrapper.de/). Once the chart is published, under "Share & Embed", look at the "Embed code" section. Make sure the "Embed with script" option is selected. A piece of html starting with "div" appears. Check out the "id" tag,that ressembles:  `id="datawrapper-vis-cY0Bb"`. Copy and paste that last string of letters after `datawrapper-vis-` (do not include the dash beforehand). This is the `id` attribute. 
+This component lets you embed charts created on [Datawrapper](https://www.datawrapper.de/). Once the chart is published, under "Share & Embed", look at the "Embed code" section. Make sure the "Embed with script" option is selected. A piece of html starting with "div" appears. Check out the "id" tag,that looks like:  `id="datawrapper-vis-cY0Bb"`. Copy/paste that last string of letters after `datawrapper-vis-` (do not include the dash beforehand). This is the `id` attribute. 
 
 ![A screenshot showing where to click to get to the datawrapper id needed as an attribute in the datawrapper shortcode. Under Embed Code, Embed with script radio button selected, copy/paste the last string of letters after datawrapper-vis-](https://github.com/user-attachments/assets/e72b45a4-5282-492a-8b12-a7017ad2c77b)
 
