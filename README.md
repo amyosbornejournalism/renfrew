@@ -338,3 +338,6 @@ https://<username>.github.io/<repo-name>/
 Google take 1-2 minutes to build the site after activating the Pages feature. 
 
 Please note that your website will not build retroactively: if you made the changes in the repo's "settings" after having pushed to Github, you will need to push again to trigger the build and deployment.
+
+### To update
+update locally by wriitng 'git pull' in your terminal
