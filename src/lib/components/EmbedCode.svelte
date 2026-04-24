@@ -162,20 +162,23 @@
 
 
 {#if normalizedSrc}
-<div class="vidSection"
-  bind:this={vidSection}
-  class:active={isActive}
->
-  {#if normalizedSize === "full"}
-    <figure class="full-bleed video-section">
-      {@html normalizedSrc}
-    </figure>
-  {:else if normalizedSize === "large"}
-    <figure class="full-bleed video-section">
-      {@html normalizedSrc} 
-    </figure>
-  {:else}
-    <figure class="my-3">{@html normalizedSrc}</figure>
-  {/if}
+<div class="vidSectionWrapper">
+  <div class="vidSection"
+    bind:this={vidSection}
+    class:active={isActive}
+  >
+    {#if normalizedSize === "full"}
+      <figure class="full-bleed video-section">
+        {@html normalizedSrc}
+      </figure>
+    {:else if normalizedSize === "large"}
+      <figure class="full-bleed video-section">
+        {@html normalizedSrc} 
+      </figure>
+    {:else}
+      <figure class="my-3">{@html normalizedSrc}</figure>
+    {/if}
+  </div>
+  <div class="blurBackground"></div>
 </div>
 {/if}

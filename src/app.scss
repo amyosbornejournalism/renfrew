@@ -27,8 +27,7 @@ $small-font-size: .875em;
 
 @import "bootstrap/scss/bootstrap"; /* Import all of Bootstrap’s Sass */
 
-
-
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 
 /***********
 Any project-wide styles should go AFTER the Bootsrap import 
@@ -42,7 +41,9 @@ html, body {
   -moz-osx-font-smoothing: auto;
   position: relative;
   z-index: 0;
-  background-color: gray;
+  color: #F7FBC4;
+  font-family: "Newsreader";
+  font-size: 20px;
 
 
   &::before {
@@ -52,7 +53,7 @@ html, body {
     z-index: -1;
     pointer-events: none;
     // opacity: 0.2;
-    background: url("/src/lib/assets/pexels-codioful-7134983.jpg") center/ cover no-repeat;
+    background: url("/src/lib/assets/backroundblur.png") center/ cover no-repeat;
   }
 }
 
@@ -62,6 +63,8 @@ header {
 }
 
 .headScroller {
+    color: #F7FBC4;
+  width: 95%;
 
   .bg {
     position: sticky;
@@ -83,14 +86,35 @@ header {
       align-self: center;
     }
 
-    .videoWrap video {
+    .videoWrap img {
+      position: absolute; 
+      width: 100%;
+      height: 100%;
+      // position: relative;
+      // height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+      transition: filter 0.2s linear;
+      filter: blur(var(--blur));
+      inset: 0;
+      opacity: var(--opacitySlide);
+
+      // width: calc(100% + 100px);   // 👈 expand beyond edges
+      // height: calc(100% + 100px);
+
+      // transform: translate(-50px, -50px);
+    }
+
+    .videoWrap iframe {
       width: 100%;
       // height: 100%;
       object-fit: cover;
       display: block;
       border-radius: 10px;
-      filter: blur(var(--blur));
-      transition: filter 0.2s linear;
+      opacity: 0;
+      // filter: blur(var(--blur));
+      // transition: filter 0.2s linear;
     }
   }
 
@@ -102,7 +126,6 @@ header {
     width: 120px;
     z-index: 2;
     background: rgba(0, 0, 0, 0.6);
-    color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -122,16 +145,21 @@ header {
     align-items: center;
     margin-bottom: 50vh;
     margin-top: -60vh;
+    color: #F7FBC4;
+    font-family: "Newsreader";
+    max-width: 60%;
+    font-size: 2.5rem;
   }
 
   .slide > * {
     padding: 20px;
-    color: white;
     text-align: center;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    // background: rgba(0, 0, 0, 0.2);
+    // border-radius: 10px;
     max-width: 80%;
     margin: 0 auto;
+    font-size: 1.9rem;
+    line-height: 1.2;
 
     @media (min-width: 700px) {
       max-width: 600px;
@@ -144,31 +172,34 @@ header {
   pointer-events: auto;
 }
 
+.vidSectionWrapper {
+  position: relative;
+  width: 100%;
+  margin: 200px 0;
+}
+.blurBackground {
+
+}
+
 .vidSection {
   position: relative;
   width: 100%; 
-  min-height: 110svh;
+  min-height: 100vh;
   overflow: hidden;
   margin: 100px 0;
   padding: 50px 0;
-  background: gray;
+  // background: black;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
+  // background: black;
+  // filter: blur(30px);
+  // mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 95%, transparent 100%);
+  // -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
 
   @media (min-width: 700px) {
     padding: 100px 0;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: black;
-    opacity: 0.4;
-    transition: all 600ms ease;
-    z-index: 0;
   }
 
   .full-bleed {
@@ -190,6 +221,7 @@ header {
       border: none;
     }
   }
+
 }
 
 .vidSection.active::before {
@@ -205,24 +237,24 @@ header {
   align-items: center;
   position: relative;
 
-  &::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%); 
-    width: 70%;
-    height: 100%;
-    opacity: 0.4;
-    background: rgba(0, 0, 0, 0.85);
-    pointer-events: none;
-    z-index: -1;
-    filter: blur(20px)
-  }
+
+  // &::before {
+  //   content: "";
+  //   position: fixed;
+  //   top: 0;
+  //   left: 50%;
+  //   transform: translateX(-50%); 
+  //   width: 70%;
+  //   height: 100%;
+  //   opacity: 0.4;
+  //   background: rgba(0, 0, 0, 0.85);
+  //   pointer-events: none;
+  //   z-index: -1;
+  //   filter: blur(20px)
+  // }
 
   p {
     max-width: 80%;
-    color: white;
 
     @media (min-width: 800px) {
       max-width: 720px;
