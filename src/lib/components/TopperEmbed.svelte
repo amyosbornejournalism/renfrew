@@ -209,14 +209,14 @@
     </div>
   </div>
   <div class="sliderContent">
-    <div class="slide fade-in">
+    <div class="slide fade-in" style="font-weight: 600;">
       <p class="pb-0">They went to The Renfrew Center for help.<br>Many left with trauma.</p>
     </div>
     <div class="slide">
       <p>How does a place built to heal end up harming?</p>
     </div>
     <div class="slide">
-      <h1>Trauma In Treatment </h1>
+      <h1 style="font-weight: 600;">Trauma In Treatment </h1>
       <p class="fw-light">A leading eating disorder center markets "gold standard" recovery, but patient outcomes tell a different story.</p>
       <p class="fs-5 fw-light">By Amy Osborne and Mariana Best<br>May 5, 2026</p>
 

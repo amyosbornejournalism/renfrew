@@ -187,7 +187,6 @@
 {#if resolved}
   {#if normalizedSize === 'full'}
     <figure class="my-3 full-bleed">
-      <div class="ratio ratio-16x9">
         {#if resolved.kind === 'file'}
           <!-- svelte-ignore a11y_media_has_caption -->
           <video
@@ -204,14 +203,15 @@
             {/if}
           </video>
         {:else}
-          <iframe
-            src={resolved.embedUrl}
-            title={title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <div class="ratio ratio-16x9">
+            <iframe
+              src={resolved.embedUrl}
+              title={title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
         {/if}
-      </div>
 
       {#if caption}
         <figcaption class="mt-2 text-muted small">{caption}</figcaption>
@@ -223,31 +223,31 @@
       <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-10 col-xxl-8">
-            <div class="ratio ratio-16x9">
-              {#if resolved.kind === 'file'}
-                <!-- svelte-ignore a11y_media_has_caption -->
-                <video
-                  src={resolved.fileUrl}
-                  title={title}
-                  class="w-100 h-100"
-                  autoplay={autoplayBool}
-                  controls={controlsBool}
-                  muted={muteBool}
-                  playsinline={playsinlineBool}
-                >
-                  {#if captionsSrc}
-                    <track kind="captions" src={captionsSrc} srclang={srclang} label={label} default />
-                  {/if}
-                </video>
-              {:else}
+            {#if resolved.kind === 'file'}
+              <!-- svelte-ignore a11y_media_has_caption -->
+              <video
+                src={resolved.fileUrl}
+                title={title}
+                class="w-100 h-100"
+                autoplay={autoplayBool}
+                controls={controlsBool}
+                muted={muteBool}
+                playsinline={playsinlineBool}
+              >
+                {#if captionsSrc}
+                  <track kind="captions" src={captionsSrc} srclang={srclang} label={label} default />
+                {/if}
+              </video>
+            {:else}
+              <div class="ratio ratio-16x9">
                 <iframe
                   src={resolved.embedUrl}
                   title={title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>
-              {/if}
-            </div>
+              </div>
+            {/if}
           </div>
         </div>
       </div>

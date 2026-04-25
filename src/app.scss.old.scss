@@ -1,0 +1,232 @@
+@import "/fonts/fonts.css";
+
+/*************
+Bootstrap configuration overrides must be BEFORE importing Bootstrap. 
+List of options here: https://getbootstrap.com/docs/5.3/customize/options/
+***************/
+
+
+
+$font-family-sans-serif: 'Lato', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-size-base: 1.1rem;
+$font-weight-base: 400;
+$line-height-base: 1.6;
+
+$headings-font-family: 'Roboto Slab', 'Lato', serif;
+$headings-font-style: null;
+$headings-font-weight: 500;
+$headings-line-height: 1.2;
+$headings-color: #404040;
+
+$display-font-family: 'Crimson Text', 'Roboto Slab', Garamond, 'Times New Roman', serif;
+$display-font-style:  null;
+$display-font-weight: 300;
+$display-line-height: $headings-line-height;
+
+$small-font-size: .875em;
+
+@import "bootstrap/scss/bootstrap"; /* Import all of Bootstrap’s Sass */
+
+
+
+
+/***********
+Any project-wide styles should go AFTER the Bootsrap import 
+************/
+
+
+
+html, body {
+  height: 100%;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  position: relative;
+  z-index: 0;
+  background-color: gray;
+
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    // opacity: 0.2;
+    background: url("/src/lib/assets/PNGsforweb/backroundblur.png") center/ cover no-repeat;
+  }
+}
+
+header {
+  position: relative;
+  z-index: 1000;
+}
+
+.headScroller {
+
+  .bg {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    .videoWrap {
+      width: 80%;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      display: flex;
+      align-self: center;
+    }
+
+    .videoWrap video {
+      width: 100%;
+      // height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+      filter: blur(var(--blur));
+      transition: filter 0.2s linear;
+    }
+  }
+
+  .playBtn {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    height: 60px;
+    width: 120px;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .slide {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+  }
+
+  .slide h1 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50vh;
+    margin-top: -60vh;
+  }
+
+  .slide > * {
+    padding: 20px;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+
+    @media (min-width: 700px) {
+      max-width: 600px;
+    }
+  }
+}
+
+.bg.active {
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.vidSection {
+  position: relative;
+  width: 100%; 
+  min-height: 110svh;
+  overflow: hidden;
+  margin: 100px 0;
+  padding: 50px 0;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+  @media (min-width: 700px) {
+    padding: 100px 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: black;
+    opacity: 0.4;
+    transition: all 600ms ease;
+    z-index: 0;
+  }
+
+  .full-bleed {
+    width: 95%;
+    position: relative;
+    line-height: 0;
+    // height: 100%;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1; //
+    aspect-ratio: 16 / 9; //// 9:16 mobile aspect
+
+    @media (min-width: 700px) {
+      width: 75%;
+    }
+
+    iframe {
+      border: none;
+    }
+  }
+}
+
+.vidSection.active::before {
+  opacity: 1;
+}
+
+
+.mainContainer {
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 70%;
+    height: 100%;
+    opacity: 0.4;
+    background: rgba(0, 0, 0, 0.85);
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(20px)
+  }
+
+  p {
+    max-width: 80%;
+    color: white;
+
+    @media (min-width: 800px) {
+      max-width: 720px;
+    }
+  }
+
+}
