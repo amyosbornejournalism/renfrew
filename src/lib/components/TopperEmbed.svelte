@@ -11,6 +11,7 @@
 
   import { browser } from "$app/environment";
   import { onMount, tick } from "svelte";
+  import image from '../assets/101125_Hafsa_253.jpg';
 
   export let bodyHtml: string | undefined;
   export let size: "full" | "large" | "fit" = "large";
@@ -134,54 +135,57 @@
 
 
   let scroller: HTMLElement | null = null;
+  let getIframe: HTMLIFrameElement | null = null;
   let blur = 30;
   let opacity = 0.3;
   let canPlay = false;
+  let ticking = false;
+  
 
   function handleScroll() {
-    if (!scroller) return;
+    if (!scroller || !getIframe) return;
 
     const rect = scroller.getBoundingClientRect();
     const vh = window.innerHeight;
-    const getIframe = document.querySelector(".headScroller .bg .videoWrap iframe");
-
     let progress = (vh - rect.top) / (rect.height + vh);
 
 
     if (progress < 0.55) {
-      // blur = 30;
+      blur = 30;
       opacity = 0.3
       canPlay = false;
-      if (getIframe instanceof HTMLIFrameElement) {
-          getIframe.style.opacity = "0";
-        }
+      getIframe.style.opacity = "0";
     } else {
-      canPlay = false;
       const start = 0.55;
-      const end = 0.70; // finish earlier
-
+      const end = 0.7;
       const t = (progress - start) / (end - start);
-      blur = Math.max(30 - t * 30, 0);
-      opacity = 0.7
 
-      if (getIframe instanceof HTMLIFrameElement) {
-          getIframe.style.opacity = "0";
-        }
+      canPlay = false;
+      blur = Math.max(30 - t * 30, 0);
+      opacity = 0.3 + t * 0.6;
+      getIframe.style.opacity = "0";
 
       if (blur === 0) {
         canPlay = true;
         opacity = 1;
-        if (getIframe instanceof HTMLIFrameElement) {
-          getIframe.style.opacity = "1";
-        }
-
+        getIframe.style.opacity = "1";
       }
     }
-    
+  }
+
+  function updateScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        handleScroll();
+        ticking = false;
+      })
+      ticking = true;
+    }
   }
 
   onMount(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    getIframe = document.querySelector(".headScroller .bg .videoWrap iframe");
+    window.addEventListener("scroll", updateScroll, { passive: true });
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -199,7 +203,7 @@
   >
     <div class="videoWrap">
       <figure class="full-bleed video-section">
-          <img src='' alt="test" style="--blur: {blur}px; {canPlay ? "z-index: 0;" : "z-index: 10;"} --opacitySlide: {opacity}"/>
+          <img src={image} alt="test" style="--blur: {blur}px; --opacitySlide: {opacity}; {canPlay ? "z-index: 0;" : "z-index: 10;"}"/>
           {@html normalizedSrc} 
       </figure>
     </div>
