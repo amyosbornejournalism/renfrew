@@ -53,7 +53,7 @@ html, body {
     z-index: -1;
     pointer-events: none;
     // opacity: 0.2;
-    background: url("/src/lib/assets/backroundblur.png") center/ cover no-repeat;
+    background: url("backroundblur1.png") center/ cover no-repeat;
   }
 }
 
@@ -63,8 +63,18 @@ header {
 }
 
 .headScroller {
-    color: #F7FBC4;
+  color: #F7FBC4;
   width: 95%;
+
+  h1{
+    color: #F7FBC4 !important;
+    margin:0;
+    padding:0;
+    font-weight: 400;
+    font-size: 4rem !important;
+    font-family: "Newsreader";
+  }
+  
 
   .bg {
     position: sticky;
@@ -86,7 +96,7 @@ header {
       align-self: center;
 
       @media (min-width: 700px) {
-         width: 80%;
+        width: 80%;
       }
     }
 
@@ -133,18 +143,22 @@ header {
     height: 100vh;
   }
 
-  .slide h1 {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50vh;
+  .slide:first-child{
     margin-top: -60vh;
-    color: #F7FBC4;
-    font-family: "Newsreader";
-    max-width: 60%;
-    font-size: 2.5rem;
   }
+
+  // .slide h1 {
+  //   display: flex;
+  //   align-content: center;
+  //   justify-content: center;
+  //   align-items: center;
+  //   margin-bottom: 50vh;
+  //   margin-top: -60vh;
+  //   color: #F7FBC4;
+  //   font-family: "Newsreader";
+  //   max-width: 60%;
+  //   font-size: 2.5rem;
+  // }
 
   .slide > * {
     padding: 20px;
@@ -154,8 +168,8 @@ header {
     font-size: 1.9rem;
     line-height: 1.2;
 
-    @media (min-width: 700px) {
-      max-width: 600px;
+    @media (min-width: 1000px) {
+      max-width: 1000px;
     }
   }
 }
@@ -234,4 +248,16 @@ header {
     }
   }
 
+}
+
+/* Fade in after page loads or added to the DOM by JS */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }

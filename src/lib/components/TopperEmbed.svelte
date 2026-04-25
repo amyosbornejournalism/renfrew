@@ -209,15 +209,18 @@
     </div>
   </div>
   <div class="sliderContent">
-    <div class="slide">
-      <h1>Eating Disorder Patients Went to The Renfrew Center for Help. Many Left with Trauma.</h1>
-      <!-- <p>Our investigation has found a large gap between what The Renfrew Center promises and what it delivers.</p> -->
+    <div class="slide fade-in">
+      <p class="pb-0">They went to The Renfrew Center for help.<br>Many left with trauma.</p>
     </div>
     <div class="slide">
-      <p>How does a place built to heal end up harming the very people it claims to save?</p>
+      <p>How does a place built to heal end up harming?</p>
     </div>
     <div class="slide">
-      <p>"She was going in there willingly. And you make her feel so bad that she feels like she has no other choice than to kill herself."</p>
+      <h1>Trauma In Treatment </h1>
+      <p class="fw-light">A leading eating disorder center markets "gold standard" recovery, but patient outcomes tell a different story.</p>
+      <p class="fs-5 fw-light">By Amy Osborne and Mariana Best<br>May 5, 2026</p>
+
+      <!-- <p>"She was going in there willingly. And you make her feel so bad that she feels like she has no other choice than to kill herself."</p> -->
     </div>
     <div class="slide"></div>
   </div>
