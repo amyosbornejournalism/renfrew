@@ -1,5 +1,6 @@
 <!-- src/lib/components/VideoEmbed.svelte -->
 <script lang="ts">
+  import { asset } from '$app/paths';
   export let src: string | undefined;
 
   export let title: string = '';
@@ -183,6 +184,10 @@
   $: controlsBool = toBool(controls, true);
   $: playsinlineBool = toBool(playsinline, true);
   $: muteBool = toBool(muted, false);
+  $: videoSrc =
+    resolved?.fileUrl?.startsWith('/')
+      ? asset(resolved.fileUrl)
+      : resolved?.fileUrl;
 </script>
 
 {#if resolved}
@@ -191,7 +196,7 @@
         {#if resolved.kind === 'file'}
           <!-- svelte-ignore a11y_media_has_caption -->
           <video
-            src={resolved.fileUrl}
+            src={videoSrc}
             title={title}
             class="w-100 h-100"
             autoplay={autoplayBool}
@@ -228,7 +233,7 @@
             {#if resolved.kind === 'file'}
               <!-- svelte-ignore a11y_media_has_caption -->
               <video
-                src={resolved.fileUrl}
+                src={videoSrc}
                 title={title}
                 class="w-100 h-100"
                 autoplay={autoplayBool}
@@ -265,7 +270,7 @@
         {#if resolved.kind === 'file'}
           <!-- svelte-ignore a11y_media_has_caption -->
           <video
-            src={resolved.fileUrl}
+            src={videoSrc}
             title={title}
             class="w-100 h-100"
             autoplay={autoplayBool}
