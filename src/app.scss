@@ -327,3 +327,11 @@ figure.pullquote{
 .border{
   border: none !important;
 }
+
+.video-fit{
+  max-width: 80%;
+  width: 100%;
+  @media (min-width: 800px) {
+    max-width: 680px;
+  }
+}
