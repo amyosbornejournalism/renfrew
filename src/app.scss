@@ -46,7 +46,7 @@ html, body {
   font-size: 20px;
 
   figcaption{
-    color: #F7FBC4;
+    color: #ffffff;
     text-align: right;
   }
 
@@ -319,6 +319,7 @@ figure.pullquote{
     line-height: 3.3rem;
     max-width: 80%;
     quotes: "“" "”";
+
     &::before {
       content: open-quote;
     }
@@ -329,6 +330,12 @@ figure.pullquote{
     @media (max-width:650px){
       max-width: 100%;
       font-size: 2.5rem;
+    }
+  }
+
+  &.left{
+    figcaption{
+      text-align: left;
     }
   }
 
