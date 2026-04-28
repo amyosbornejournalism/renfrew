@@ -248,6 +248,10 @@ header {
     }
   }
 
+  p {
+    width: 100%;
+  }
+
 }
 
 /* Fade in after page loads or added to the DOM by JS */
@@ -326,4 +330,12 @@ figure.pullquote{
 
 .border{
   border: none !important;
+}
+
+.video-fit{
+  max-width: 80%;
+  width: 100%;
+  @media (min-width: 800px) {
+    max-width: 680px;
+  }
 }

@@ -213,12 +213,12 @@
       <p class="pb-0">They went to The Renfrew Center for help.<br>Many left with trauma.</p>
     </div>
     <div class="slide">
-      <p>How does a place built to heal end up harming?</p>
+      <p class="fw-bold">How does a place built to heal end up harming?</p>
     </div>
     <div class="slide">
       <h1 style="font-weight: 600;">Trauma In Treatment </h1>
-      <p class="fw-light">A leading eating disorder center markets "gold standard" recovery, but patient outcomes tell a different story.</p>
-      <p class="fs-5 fw-light">By Amy Osborne and Mariana Best<br>May 5, 2026</p>
+      <p class="fs-4 fw-light">A leading eating disorder center markets "gold standard" recovery, but patient outcomes tell a different story.</p>
+      <p class="fs-6 fw-light">By Amy Osborne and Mariana Best<br>May 5, 2026</p>
 
       <!-- <p>"She was going in there willingly. And you make her feel so bad that she feels like she has no other choice than to kill herself."</p> -->
     </div>
