@@ -3,7 +3,7 @@
   export let src: string | undefined;
   export let alt: string | undefined;
   export let cite: string | undefined;
-  export let extraClass: string | undefined;
+  export let extraClass: string | '';
   export let caption: string | undefined;
   export let size: 'full' | 'large' | 'fit' = 'large';
 
@@ -66,7 +66,7 @@
     <figure class={`my-3 full-bleed ${extraClass}`}>
       <img src={finalSrc} alt={finalAlt} class="img-fluid" />
       {#if caption}
-        <figcaption class="mt-2 small">{@html caption}</figcaption>
+        <figcaption class="mt-2 small col-6 d-block ms-auto">{@html caption}</figcaption>
       {/if}
       {#if cite}
         <cite class="cite">{@html cite}</cite>
@@ -81,7 +81,7 @@
           <div class="col-12 col-lg-10 col-xxl-8">
             <img src={finalSrc} alt={finalAlt} class="img-fluid" />
             {#if caption}
-              <figcaption class="mt-2 small">{@html caption}</figcaption>
+              <figcaption class="mt-2 small col-6 d-block ms-auto">{@html caption}</figcaption>
             {/if}
             {#if cite}
               <cite class="cite">{@html cite}</cite>
@@ -96,7 +96,7 @@
     <figure class={`my-3 ${extraClass}`}>
       <img src={finalSrc} alt={finalAlt} class="img-fluid" />
       {#if caption}
-        <figcaption class="mt-2 small">{@html caption}</figcaption>
+        <figcaption class="mt-2 small col-6 d-block ms-auto">{@html caption}</figcaption>
       {/if}
       {#if cite}
         <cite class="cite">{@html cite}</cite>

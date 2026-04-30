@@ -48,6 +48,7 @@ html, body {
   figcaption{
     color: #ffffff;
     text-align: right;
+    font-size: 0.7rem !important;
   }
 
   &::before {
@@ -159,8 +160,10 @@ header {
     height: 100vh;
   }
 
+
   .slide:first-child{
     margin-top: -60vh;
+    
   }
 
   // .slide h1 {
