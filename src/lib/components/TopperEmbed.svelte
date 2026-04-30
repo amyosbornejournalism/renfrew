@@ -11,6 +11,7 @@
 
   import { browser } from "$app/environment";
   import { onMount, tick } from "svelte";
+  import { asset } from '$app/paths';
   import image from '../assets/101125_Hafsa_253.jpg';
 
   export let bodyHtml: string | undefined;

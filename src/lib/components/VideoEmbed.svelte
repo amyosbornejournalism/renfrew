@@ -1,5 +1,6 @@
 <!-- src/lib/components/VideoEmbed.svelte -->
 <script lang="ts">
+  import { asset } from '$app/paths';
   export let src: string | undefined;
 
   export let title: string = '';
@@ -10,7 +11,7 @@
   export let autoplay: boolean | string | undefined = false;
   export let controls: boolean | string | undefined = true;
   export let playsinline: boolean | string | undefined = true;
-  export let mute: boolean | string | undefined = false;
+  export let muted: boolean | string | undefined = false;
   export let loop: boolean | string | undefined = false;
 
   // Optional: for local files, allow captions track served from /static
@@ -123,7 +124,7 @@
     const autoplayBool = toBool(autoplay, false);
     const controlsBool = toBool(controls, true);
     const playsinlineBool = toBool(playsinline, true);
-    const muteBool = toBool(mute, false);
+    const muteBool = toBool(muted, false);
 
     if (isYouTubeHost(u.hostname)) {
       const id = extractYouTubeId(u);
@@ -137,7 +138,7 @@
       params.set('rel', '0');
 
       // YouTube: autoplay often requires muted
-      if (muteBool) params.set('mute', '1');
+      if (muteBool) params.set('muted', '1');
 
       const qs = params.toString();
       const embedUrl = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}${
@@ -182,7 +183,11 @@
   $: autoplayBool = toBool(autoplay, false);
   $: controlsBool = toBool(controls, true);
   $: playsinlineBool = toBool(playsinline, true);
-  $: muteBool = toBool(mute, false);
+  $: muteBool = toBool(muted, false);
+  $: videoSrc =
+    resolved?.fileUrl?.startsWith('/')
+      ? asset(resolved.fileUrl)
+      : resolved?.fileUrl;
 </script>
 
 {#if resolved}
@@ -191,7 +196,7 @@
         {#if resolved.kind === 'file'}
           <!-- svelte-ignore a11y_media_has_caption -->
           <video
-            src={resolved.fileUrl}
+            src={asset(videoSrc)}
             title={title}
             class="w-100 h-100"
             autoplay={autoplayBool}
@@ -228,7 +233,7 @@
             {#if resolved.kind === 'file'}
               <!-- svelte-ignore a11y_media_has_caption -->
               <video
-                src={resolved.fileUrl}
+                src={asset(videoSrc)}
                 title={title}
                 class="w-100 h-100"
                 autoplay={autoplayBool}
@@ -265,7 +270,7 @@
         {#if resolved.kind === 'file'}
           <!-- svelte-ignore a11y_media_has_caption -->
           <video
-            src={resolved.fileUrl}
+            src={asset(videoSrc)}
             title={title}
             class="w-100 h-100"
             autoplay={autoplayBool}
