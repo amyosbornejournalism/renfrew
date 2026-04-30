@@ -196,7 +196,7 @@
         {#if resolved.kind === 'file'}
           <!-- svelte-ignore a11y_media_has_caption -->
           <video
-            src={asset(videoSrc)}
+            src={videoSrc}
             title={title}
             class="w-100 h-100"
             autoplay={autoplayBool}
@@ -233,7 +233,7 @@
             {#if resolved.kind === 'file'}
               <!-- svelte-ignore a11y_media_has_caption -->
               <video
-                src={asset(videoSrc)}
+                src={videoSrc}
                 title={title}
                 class="w-100 h-100"
                 autoplay={autoplayBool}
@@ -270,7 +270,7 @@
         {#if resolved.kind === 'file'}
           <!-- svelte-ignore a11y_media_has_caption -->
           <video
-            src={asset(videoSrc)}
+            src={videoSrc}
             title={title}
             class="w-100 h-100"
             autoplay={autoplayBool}
