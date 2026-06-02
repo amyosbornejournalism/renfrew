@@ -5,7 +5,7 @@
   export let cite: string | undefined;
   export let extraClass: string | '';
   export let caption: string | undefined;
-  export let size: 'full' | 'large' | 'fit' = 'large';
+  export let size: 'full' | 'large' | 'larger' | 'fit' = 'large';
 
   let embeddedSrc: string | null = null;
   let embeddedAlt: string | null = null;
@@ -67,7 +67,7 @@
       <img src={finalSrc} alt={finalAlt} class="img-fluid" />
       {#if caption}
         {#if extraClass && extraClass.toLocaleLowerCase().includes('right')}
-          <figcaption class="mt-2 small col-6 d-block ms-auto">{@html caption}</figcaption>
+          <figcaption class="mt-2 small col-12 d-block ms-auto">{@html caption}</figcaption>
         {:else}
           <figcaption class="mt-2 small col-6 d-block">{@html caption}</figcaption>
         {/if}
@@ -83,6 +83,28 @@
       <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-10 col-xxl-8">
+            <img src={finalSrc} alt={finalAlt} class="img-fluid" />
+            {#if caption}
+              {#if extraClass && extraClass.toLocaleLowerCase().includes('right')}
+                <figcaption class="mt-2 small col-8 d-block ms-auto">{@html caption}</figcaption>
+              {:else}
+                <figcaption class="mt-2 small col-8 d-block">{@html caption}</figcaption>
+              {/if}
+            {/if}
+            {#if cite}
+              <cite class="cite">{@html cite}</cite>
+            {/if}
+          </div>
+        </div>
+      </div>
+    </figure>
+
+  {:else if size === 'larger'}
+    <!-- svelte-ignore a11y_figcaption_parent -->
+    <figure class={`my-3 full-bleed ${extraClass}`}>
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-10 col-xxl-11">
             <img src={finalSrc} alt={finalAlt} class="img-fluid" />
             {#if caption}
               {#if extraClass && extraClass.toLocaleLowerCase().includes('right')}

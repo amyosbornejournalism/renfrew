@@ -45,10 +45,20 @@ html, body {
   font-family: "Newsreader";
   font-size: 20px;
 
-  figcaption{
-    color: #ffffff;
-    text-align: right;
-    font-size: 0.7rem;
+  figure{
+    
+    figcaption{
+      color: #ffffff;
+      text-align: right;
+      font-size: 0.7rem;
+    }
+
+    &.full-bleed{
+      figcaption{
+        padding-right: 25px;
+      }
+    }
+
   }
 
   &::before {
@@ -74,6 +84,8 @@ header {
 .mainContainer figure:nth-of-type(2) {
   padding-top: 6rem;
 }
+
+
 
 .headScroller {
   color: #F7FBC4;
@@ -284,6 +296,7 @@ header {
     opacity: 1;
   }
 }
+
 
 
 figure.pullquote{
