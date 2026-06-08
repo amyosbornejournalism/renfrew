@@ -269,6 +269,8 @@
     <figure class="my-3 video">
         {#if resolved.kind === 'file'}
           <!-- svelte-ignore a11y_media_has_caption -->
+          <div class="row" style="padding-bottom: 24px; width: min(100vw, 140%); position: relative;left: calc((100% - min(100vw, 140%)) / 2);">
+           <div class="col-lg-6">
           <video
             src={videoSrc}
             title={title}
@@ -283,6 +285,24 @@
               <track kind="captions" src={captionsSrc} srclang={srclang} label={label} default />
             {/if}
           </video>
+          </div>
+           <div class="col-lg-6">
+          <video
+            src={"philly.mp4"}
+            title={title}
+            class="w-100 h-100"
+            autoplay={autoplayBool}
+            controls={controlsBool}
+            muted={muteBool}
+            playsinline={playsinlineBool}
+            loop={loop}
+          >
+            {#if captionsSrc}
+              <track kind="captions" src={captionsSrc} srclang={srclang} label={label} default />
+            {/if}
+          </video>
+          </div>
+          </div>
         {:else}
           <div class="ratio ratio-16x9">
             <iframe
