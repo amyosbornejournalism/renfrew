@@ -63,11 +63,11 @@
 
 {#if shouldRender}
   {#if size === 'full'}
-    <figure class={`my-3 full-bleed ${extraClass}`}>
+    <figure class={`my-3 full-bleed ${extraClass}`} style="padding-top:140px;">
       <img src={finalSrc} alt={finalAlt} class="img-fluid" />
       {#if caption}
         {#if extraClass && extraClass.toLocaleLowerCase().includes('right')}
-          <figcaption class="mt-2 small col-12 d-block ms-auto">{@html caption}</figcaption>
+          <figcaption class="mt-2 small col-12 d-block ms-auto" style="padding-right:92px; width: 50%;">{@html caption}</figcaption>
         {:else}
           <figcaption class="mt-2 small col-6 d-block">{@html caption}</figcaption>
         {/if}
@@ -79,16 +79,16 @@
 
   {:else if size === 'large'}
     <!-- svelte-ignore a11y_figcaption_parent -->
-    <figure class={`my-3 full-bleed ${extraClass}`}>
+    <figure class={`my-3 full-bleed ${extraClass}`} style="padding-top:140px; padding-bottom:140px;">
       <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-10 col-xxl-8">
             <img src={finalSrc} alt={finalAlt} class="img-fluid" />
             {#if caption}
               {#if extraClass && extraClass.toLocaleLowerCase().includes('right')}
-                <figcaption class="mt-2 small col-8 d-block ms-auto">{@html caption}</figcaption>
+                <figcaption class="mt-2 small d-block ms-auto">{@html caption}</figcaption>
               {:else}
-                <figcaption class="mt-2 small col-8 d-block">{@html caption}</figcaption>
+                <figcaption class="mt-2 small d-block">{@html caption}</figcaption>
               {/if}
             {/if}
             {#if cite}
@@ -101,7 +101,7 @@
 
   {:else if size === 'larger'}
     <!-- svelte-ignore a11y_figcaption_parent -->
-    <figure class={`my-3 full-bleed ${extraClass}`}>
+    <figure class={`my-3 full-bleed ${extraClass}`} style="padding-top:140px; padding-bottom:140px;">
       <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-10 col-xl-10 col-xxl-11">

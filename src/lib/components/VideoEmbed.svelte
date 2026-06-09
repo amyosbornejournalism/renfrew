@@ -195,6 +195,7 @@
     <figure class="my-3 full-bleed">
         {#if resolved.kind === 'file'}
           <!-- svelte-ignore a11y_media_has_caption -->
+               <div>CHANGE THIS</div>
           <video
             src={videoSrc}
             title={title}

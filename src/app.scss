@@ -44,6 +44,7 @@ html, body {
   color: #F7FBC4;
   font-family: "Newsreader";
   font-size: 20px;
+  text-align: justify;
 
   figure{
     
@@ -55,7 +56,7 @@ html, body {
 
     &.full-bleed{
       figcaption{
-        padding-right: 25px;
+        padding-right: 0px;
       }
     }
 
@@ -308,7 +309,8 @@ figure.pullquote{
   min-height: 100vh;
 
   img{
-    max-width: 40%;
+    max-width: 80%;
+    max-height: 50%;
     display: inline;
     @media (max-width:900px){
       max-width: 55%
@@ -333,7 +335,7 @@ figure.pullquote{
     font-size: 3rem;
     font-weight: 700;
     line-height: 3.3rem;
-    max-width: 80%;
+    max-width: 100%;
     quotes: "“" "”";
 
     &::before {

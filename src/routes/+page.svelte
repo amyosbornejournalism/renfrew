@@ -9,8 +9,8 @@
 
 <div class="mainContainer">
   <DocRenderer {blocks} />
-  <p class="smaller mb-1 mt-4 fw-bold">Credits</p>
-  <p class="smaller">Reporting by Amy Osborne and Mariana Best. Photos, videos and design by Amy Osborne. Development by Amy Osborne and Yoli Martinez.</p>
+  <p class="smaller mb-1 mt-4 fw-bold" style="padding-top: 140px; color: white;">Credits</p>
+  <p class="smaller" style="color: white">Reporting by Amy Osborne and Mariana Best. Photos, videos and design by Amy Osborne.</p>
 </div>
 
 
