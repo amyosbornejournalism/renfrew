@@ -64,7 +64,7 @@
 {#if shouldRender}
   {#if size === 'full'}
     <figure class={`my-3 full-bleed ${extraClass}`} style="padding-top:140px;">
-      <img src={finalSrc} alt={finalAlt} class="img-fluid" />
+      <img src={finalSrc} alt={finalAlt} />
       {#if caption}
         {#if extraClass && extraClass.toLocaleLowerCase().includes('right')}
           <figcaption class="mt-2 small col-12 d-block ms-auto" style="padding-right:92px; width: 50%;">{@html caption}</figcaption>
@@ -82,7 +82,7 @@
     <figure class={`my-3 full-bleed ${extraClass}`} style="padding-top:140px; padding-bottom:140px;">
       <div class="container-fluid">
         <div class="row justify-content-center">
-          <div class="col-12 col-lg-10 col-xxl-8">
+          <div class="col-12" style="display: flex; justify-content: center;">
             <img src={finalSrc} alt={finalAlt} class="img-fluid" />
             {#if caption}
               {#if extraClass && extraClass.toLocaleLowerCase().includes('right')}
