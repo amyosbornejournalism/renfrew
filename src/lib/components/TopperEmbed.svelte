@@ -129,11 +129,9 @@
     return doc.body.innerHTML;
   }
 
-  $: normalizedSrc =
-    bodyHtml
+  $: normalizedSrc = bodyHtml
       ? (browser ? normalizeInBrowser(decodeWysiwygHtml(bodyHtml)) : decodeWysiwygHtml(bodyHtml))
       : undefined;
-
 
   let scroller: HTMLElement | null = null;
   let getIframe: HTMLIFrameElement | null = null;
@@ -150,15 +148,14 @@
     const vh = window.innerHeight;
     let progress = (vh - rect.top) / (rect.height + vh);
 
-
-    if (progress < 0.55) {
+    if (progress < 0.80) {
       blur = 30;
       opacity = 0.3
       canPlay = false;
       getIframe.style.opacity = "0";
     } else {
-      const start = 0.55;
-      const end = 0.7;
+      const start = 0.80;
+      const end = 0.85;
       const t = (progress - start) / (end - start);
 
       canPlay = false;
@@ -204,18 +201,34 @@
   >
     <div class="videoWrap">
       <figure class="full-bleed video-section">
-          <img src={image} alt="test" style="--blur: {blur}px; --opacitySlide: {opacity}; {canPlay ? "z-index: 0;" : "z-index: 10;"}"/>
+          <img src={"Safia_Quote.png"} alt="test" style="object-fit: contain; --blur: {blur}px; --opacitySlide: {opacity}; {canPlay ? "z-index: 0;" : "z-index: 10;"}"/>
           {@html normalizedSrc} 
       </figure>
     </div>
   </div>
   <div class="sliderContent">
     <div class="slide fade-in" style="font-weight: 600;">
-      <p class="pb-0">They went to The Renfrew Center for help.<br>Many left with trauma.</p>
+      <p class="pb-0">They went to The Renfrew Center for help.<br>They left worse off.</p>
+    </div>
+    <div style="min-height: 100vh; width: 100vw;">
+      <img style="object-fit:contain; width:100%; position:relative; left:-2%;" src={"oldme.png"}>
+      <div style="display:flex; justify-content: flex-end;padding-right:64px;padding-bottom:512px">
+        <div style="width:512px;text-align:right;">
+          <span style="color:white">Journal entry excerpt from Rebecca Lebo’s  journal during her stay at the Coconut Creek residential center.</span>
+        </div>
+      </div>
+    </div>
+    <div style="min-height: 100vh; width: 100vw;">
+      <img style="object-fit:contain; width:80%;padding-left:15%" src={"collage.png"}>
+      <div style="display:flex; justify-content: flex-end;padding-right:64px;padding-bottom:512px;">
+        <div style="width:512px;text-align:right;">
+          <span style="color:white">Journal entry excerpts from Brenna Hallman’s  journal during her stay at the Spring Lane residential center.</span>
+        </div>
+      </div>
     </div>
     <div class="slide">
       <p class="fw-bold">How does a place built to heal end up harming?</p>
-    </div>
+    </div>    
     <div class="slide">
       <h1 style="font-weight: 600;">Trauma In Treatment </h1>
       <p class="fs-4 fw-light">A leading eating disorder center markets "gold standard" recovery, but patient outcomes tell a different story.</p>
