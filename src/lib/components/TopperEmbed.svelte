@@ -214,7 +214,7 @@
       <img style="object-fit:contain; width:100%; position:relative; left:-2%;" src={"oldme.png"}>
       <div style="display:flex; justify-content: flex-end;padding-right:64px;padding-bottom:512px">
         <div style="width:512px;text-align:right;">
-          <span style="color:white">Journal entry excerpt from Rebecca Lebo’s  journal during her stay at the Coconut Creek residential center.</span>
+          <span style="color:white">Journal entry excerpt from Rebecca Lebo’s  journal during her stay at a Renfrew facility.</span>
         </div>
       </div>
     </div>
@@ -222,7 +222,7 @@
       <img style="object-fit:contain; width:80%;padding-left:15%" src={"collage.png"}>
       <div style="display:flex; justify-content: flex-end;padding-right:64px;padding-bottom:512px;">
         <div style="width:512px;text-align:right;">
-          <span style="color:white">Journal entry excerpts from Brenna Hallman’s  journal during her stay at the Spring Lane residential center.</span>
+          <span style="color:white">Journal entry excerpts from Brenna Hallman’s  journal during her stay at a Renfrew facility.</span>
         </div>
       </div>
     </div>
