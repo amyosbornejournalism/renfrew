@@ -99,6 +99,28 @@
       </div>
     </figure>
 
+  {:else if size === 'larger-kinda'}
+    <!-- svelte-ignore a11y_figcaption_parent -->
+    <figure class={`my-3 full-bleed ${extraClass}`} style="padding-top:20px; padding-bottom:20px;">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-6" style="display: flex; justify-content: center;">
+            <img src={finalSrc} alt={finalAlt} class="img-fluid" />
+            {#if caption}
+              {#if extraClass && extraClass.toLocaleLowerCase().includes('right')}
+                <figcaption class="mt-2 small d-block ms-auto">{@html caption}</figcaption>
+              {:else}
+                <figcaption class="mt-2 small d-block">{@html caption}</figcaption>
+              {/if}
+            {/if}
+            {#if cite}
+              <cite class="cite">{@html cite}</cite>
+            {/if}
+          </div>
+        </div>
+      </div>
+    </figure>
+
   {:else if size === 'larger'}
     <!-- svelte-ignore a11y_figcaption_parent -->
     <figure class={`my-3 full-bleed ${extraClass}`} style="padding-top:140px; padding-bottom:140px;">
@@ -120,6 +142,7 @@
         </div>
       </div>
     </figure>
+
 
   {:else}
     <!-- fit -->
