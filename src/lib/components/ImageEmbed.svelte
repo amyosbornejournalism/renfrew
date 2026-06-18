@@ -104,7 +104,7 @@
     <figure class={`my-3 full-bleed ${extraClass}`} style="padding-top:20px; padding-bottom:20px;">
       <div class="container-fluid">
         <div class="row justify-content-center">
-          <div class="col-6" style="display: flex; justify-content: center;">
+          <div class="col-8" style="display: flex; justify-content: center;">
             <img src={finalSrc} alt={finalAlt} class="img-fluid" />
             {#if caption}
               {#if extraClass && extraClass.toLocaleLowerCase().includes('right')}

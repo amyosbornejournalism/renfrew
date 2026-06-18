@@ -212,7 +212,7 @@
       <p class="pb-0" style="padding-top:64px">They left worse off.</p>
     </div>
     <div style="min-height: 100vh; width: 100vw;">
-      <img style="object-fit:contain; width:80%;padding-left:15%" src={"collage.png"}>
+      <img style="object-fit:contain; width:80%;padding-left:15%" src={"remtop.png"}>
       <div style="display:flex; justify-content: flex-end;padding-right:20%;padding-bottom:512px;">
         <div style="width:512px;text-align:right;">
           <span style="color:white">Journal entry excerpts from Brenna Hallman’s  journal during her stay at a Renfrew facility.</span>
@@ -221,7 +221,15 @@
     </div>
     <div class="slide">
       <p class="fw-bold">How does a place built to heal end up harming?</p>
-    </div>    
+    </div>
+    <div style="min-height: 100vh; width: 100vw;">
+      <img style="object-fit:contain; width:80%;padding-left:15%" src={"since.png"}>
+      <div style="display:flex; justify-content: flex-end;padding-right:20%;padding-bottom:512px;">
+        <div style="width:512px;text-align:right;">
+          <span style="color:white">Journal entry excerpt from Brenna Hallman’s journal after her stay at a Renfrew facility.</span>
+        </div>
+      </div>
+    </div>
     <div class="slide">
       <h1 style="font-weight: 600;">Trauma In Treatment </h1>
       <p class="fs-4 fw-light">A leading eating disorder center markets "gold standard" recovery, but patient outcomes tell a different story.</p>
